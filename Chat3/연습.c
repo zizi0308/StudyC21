@@ -4,15 +4,15 @@ int main()
 {
 	char name[20];
 	int age;
-	char addr[50], addr2[50];
+	char addr[50], addr2[50], addr3[50];
 
 	printf("이름입력 : ");
 	scanf("%s", &name);
 	printf("나이입력 : ");
 	scanf("%d", &age);
 	printf("주소입력 : ");
-	scanf("%s %s", &addr, &addr2);
-	printf("%s의 나이는 %d이고, 주소는 %s %s입니다.\n", name, age, addr, addr2);
+	scanf("%s %s %s", &addr, &addr2, &addr3);
+	printf("%s의 나이는 %d이고, 주소는 %s %s %s입니다.\n", name, age, addr, addr2, addr3);
 
 	//int a;
 	//char b;
