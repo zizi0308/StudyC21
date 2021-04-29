@@ -18,11 +18,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="예제8-3.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9d4d587c-a882-4b58-9cb6-4a987891fcb7}</ProjectGuid>
-    <RootNamespace>Chap6</RootNamespace>
+    <ProjectGuid>{376d2ceb-fec0-495a-b39a-61daef7f0924}</ProjectGuid>
+    <RootNamespace>Chap8</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,17 +141,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Caculator3.c" />
-    <ClCompile Include="구구단.c" />
-    <ClCompile Include="역피라미드.c" />
-    <ClCompile Include="예제6-1.c" />
-    <ClCompile Include="예제6-2.c" />
-    <ClCompile Include="예제6-3.c" />
-    <ClCompile Include="예제6-4.c" />
-    <ClCompile Include="예제6-5.c" />
-    <ClCompile Include="피라미드.c" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

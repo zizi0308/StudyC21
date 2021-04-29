@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9d4d587c-a882-4b58-9cb6-4a987891fcb7}</ProjectGuid>
-    <RootNamespace>Chap6</RootNamespace>
+    <ProjectGuid>{cdd02a20-f374-4168-9f93-6a0b85903052}</ProjectGuid>
+    <RootNamespace>Chap7</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,15 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Caculator3.c" />
-    <ClCompile Include="구구단.c" />
-    <ClCompile Include="역피라미드.c" />
-    <ClCompile Include="예제6-1.c" />
-    <ClCompile Include="예제6-2.c" />
-    <ClCompile Include="예제6-3.c" />
-    <ClCompile Include="예제6-4.c" />
-    <ClCompile Include="예제6-5.c" />
-    <ClCompile Include="피라미드.c" />
+    <ClCompile Include="Calculator4.c" />
+    <ClCompile Include="function1.c" />
+    <ClCompile Include="function3.c" />
+    <ClCompile Include="function4.c" />
+    <ClCompile Include="main_test.c" />
+    <ClCompile Include="예제7-2.c" />
+    <ClCompile Include="예제7-3.c" />
+    <ClCompile Include="예제7-4.c" />
+    <ClCompile Include="예제7-5.c" />
+    <ClCompile Include="예제7-6.c" />
+    <ClCompile Include="예제7-7.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

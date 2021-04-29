@@ -15,31 +15,37 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="예제6-1.c">
+    <ClCompile Include="function1.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="예제6-2.c">
+    <ClCompile Include="function3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="예제6-3.c">
+    <ClCompile Include="function4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="예제6-4.c">
+    <ClCompile Include="예제7-2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="피라미드.c">
+    <ClCompile Include="예제7-3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="역피라미드.c">
+    <ClCompile Include="예제7-4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="구구단.c">
+    <ClCompile Include="Calculator4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="예제6-5.c">
+    <ClCompile Include="main_test.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Caculator3.c">
+    <ClCompile Include="예제7-5.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="예제7-6.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="예제7-7.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
