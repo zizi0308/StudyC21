@@ -2,20 +2,18 @@
 #include <stdio.h>
 
 void input_ary(int* pa, int size);
-void sawp_ary(int* pa, int* pb);
-void print_ary(int* pa, int *pb);
+void swap_ary(int *pa, int size);
+void print_ary(int* pa, int size);
 
 
 int main(void)
 {
-	int ary1[10];
-	int ary2[10];
-	//int size = sizeof(ary1) / sizeof(ary1[0]);
-	input_ary(ary1, 10);
-	swap(ary1, ary2);
-	print_ary(ary1, 10);
+	int ary[10];
+	int size = sizeof(ary) / sizeof(ary[0]);		// 10개
+	input_ary(ary, size);
+	swap_ary(ary, size);
+	print_ary(ary, size);
 	printf("\n");
-	print_ary(ary2, 10);
 	return 0;
 }
 
@@ -27,26 +25,30 @@ void input_ary(int* pa, int size)
 
 	for ( i = 0; i < size; i++)
 	{
-		scanf("%d", pa + 1);
+		scanf("%d", &pa[i]);  // 정수를 받아야 하니까 scanf
 	}
 }
 
-void sawp_ary(int* pa, int* pb)
+void swap_ary(int* pa, int size)
 {
-	int* pa;
-	int* pb;
 	int temp;
-	
-	temp = *pa;
-	*pa = *pb;
-	*pb = temp;
+	int i;
+	int j;
+
+	for (i = 0; i < size / 2; i++)
+	{
+		j = size - i - 1;
+		temp = pa[i];
+		pa[i] = pa[j];
+		pa[j] = temp;
+	}
 }
-void print_ary(int* pa, int* pb)
+void print_ary(int* pa, int size)
 {
 	int i;
-
-	for ( i = 0; i < 10; i++)
+	
+	for ( i = 0; i < size; i++)
 	{
-		printf("%d %d", pa[i], pb[i]);
+		printf("%d ", pa[i]);
 	}
 }
