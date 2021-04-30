@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="예제8-7.c" />
+    <ClCompile Include="예제9-7.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{376d2ceb-fec0-495a-b39a-61daef7f0924}</ProjectGuid>
-    <RootNamespace>Chap8</RootNamespace>
+    <ProjectGuid>{e83f054c-ca3b-4a1d-adcd-bacb2b25616d}</ProjectGuid>
+    <RootNamespace>Chap9</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

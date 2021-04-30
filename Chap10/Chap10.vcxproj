@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="예제8-7.c" />
+    <ClCompile Include="pointerExam.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{376d2ceb-fec0-495a-b39a-61daef7f0924}</ProjectGuid>
-    <RootNamespace>Chap8</RootNamespace>
+    <ProjectGuid>{c26dc50d-7243-449e-9f01-f7ead9f42f0c}</ProjectGuid>
+    <RootNamespace>Chap10</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
