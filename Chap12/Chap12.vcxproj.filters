@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ary.c">
+    <ClCompile Include="로또프로그램.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
