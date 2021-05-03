@@ -5,7 +5,7 @@ void print_lotto(int* pa, int size);
 int main(void)
 {
 	int lotto[6];
-	int size = sizeof(lotto) / sizeof(lotto[0]);
+	int size = sizeof(lotto) / sizeof(lotto[0]);			// 배열 요소의 개수 계산
 	input_lotto(lotto, size);
 	printf("\n");
 	return 0;
@@ -46,7 +46,7 @@ void print_lotto(int* pa, int size)
 	printf("입력하신 로또번호는 :");
 	for (num = 0; num < size; num++)
 	{
-		printf("%d ", pa[num]);
+		printf("%d ", pa[num]);								// 배열요소들을 차례로 출력
 	}
 	
 }
