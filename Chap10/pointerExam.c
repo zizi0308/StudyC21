@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-void input_ary(int* pa, int size);
-void swap_ary(int *pa, int size);
+void input_ary(int* pa, int size);					// 함수로 빼서 배열을 건드려야 하기 때문에 포인터가 필요
+void swap_ary(int *pa, int size);					// 메인함수에서 코드짜면 포인터가 필요하지 않다
 void print_ary(int* pa, int size);
 
 
