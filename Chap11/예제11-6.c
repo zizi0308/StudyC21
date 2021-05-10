@@ -17,11 +17,11 @@ void my_gets(char* str, int size)
 	int i = 0;
 
 	ch = getchar();
-	while ((ch != '\n') && (i < size -1))
+	while ((ch != '\n') && (i < size -1))   // ch가 개행이 아니고 반환값이 사이즈 -1일 때(배열의 크기만큼 입력) 
 	{
 		str[i] = ch;						// 입력한 문자를 배열에 저장
-		i++;
-		ch = getchar();
+		i++;								// 첨자증가	
+		ch = getchar();						// 새로운 문자입력
 	}
 	str[i] = '\0';							// 문자열이 끝났음을 알리는 마침표 역할(Null 문자)
 
