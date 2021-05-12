@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Calculator5.c">
+    <ClCompile Include="포인터배열_배열포인터.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

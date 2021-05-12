@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="예제17-12.c">
+    <ClCompile Include="화살표연산자.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
