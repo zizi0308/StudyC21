@@ -29,7 +29,7 @@ int main(void)
 		}
 	}
 
-	for ( i = 0; i < 5; i++)
+	for ( i = 0; i < 5; i++)			// 학생별 평균 구하기
 	{
 		printf("<%d번 학생>\n", i + 1);
 		std_tot = 0;
@@ -37,11 +37,12 @@ int main(void)
 		{
 			std_tot += score[i][j];
 		}
-		std_avg = std_tot / 4.0;
+		std_avg = std_tot / 4.0;		// 학생 4명
 		printf("평균 : %.1lf\n", std_avg);
 	}
+	printf("\n");
 
-	for ( j = 0; j < 4; j++)
+	for ( j = 0; j < 4; j++)			// 과목별 평균 구하기
 	{
 		printf("<%d번째 과목>\n", j + 1);
 		subj_tot = 0;
@@ -49,12 +50,13 @@ int main(void)
 		{
 			subj_tot += score[i][j];
 		}
-		subj_avg = subj_tot / 5.0;
+		subj_avg = subj_tot / 5.0;		// 5과목
 		printf("평균 : %.1lf\n", subj_avg);
 	}
 	
 	printf("\n");
-	avg = total / 4.0;					// avg변수를 사용한다. total / 4.0 << avg는 double로 출력되므로 소수점까지 입력해줌
+	avg = total / 4.0;					
+	// avg변수를 사용한다. total / 4.0 << avg는 double로 출력되므로 소수점까지 입력해줌
 	printf("총점 : %d, 평균 : %.1lf\n", total, avg);
 	// 총점을 출력하고, 평균을 소수점 한 자리까지 출력해준다.
 
