@@ -10,17 +10,19 @@ int main(void)
 	int max = 0;				// 가장 긴 단어길이를 저장할 변수
 	ch = getchar();
 
-	//while (1)
-	//{
+	while (1)
+	{
 		if (ch != -1 && len != '\n')
 		{
 			ch = getchar();
 			len++;
 		}
-		if (ch == -1) //break;
-	//}
-	if (len < max) len = max;
-	printf("가장 긴 단어의 길이 : %d", max);
+		if (ch == -1 && len == '\n') break;
+		putchar(ch);
+	}
+	
+	/*if (len < max) len = max;
+	printf("가장 긴 단어의 길이 : %d", max);*/
 
 	return 0;
 }
