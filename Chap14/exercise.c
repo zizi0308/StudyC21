@@ -20,15 +20,6 @@ int main(void)
 		}
 	}
 	
-	for (i = 0; i < 5; i++)				// i가 < 5까지 요소들을 출력해야 하는데
-	{
-		total = 0;						// total변수를 사용하기 전에 초기화 해야한다(아니면 결과 이상함)
-		for ( j = 0; j < 4; j++)		// 4개의 열에 5개의 요소를 출력한다.
-		{
-			total += score[i][j];		// total변수를 사용한다.(모든 행과 열의 값을 더한다)
-		}
-	}
-
 	for ( i = 0; i < 5; i++)			// 학생별 평균 구하기
 	{
 		printf("<%d번 학생>\n", i + 1);
@@ -53,7 +44,17 @@ int main(void)
 		subj_avg = subj_tot / 5.0;		// 5과목
 		printf("평균 : %.1lf\n", subj_avg);
 	}
-	
+	printf("\n");
+
+	for (i = 0; i < 5; i++)				// i가 < 5까지 요소들을 출력해야 하는데
+	{
+		total = 0;						// total변수를 사용하기 전에 초기화 해야한다(아니면 결과 이상함)
+		for (j = 0; j < 4; j++)		// 4개의 열에 5개의 요소를 출력한다.
+		{
+			total += score[i][j];		// total변수를 사용한다.(모든 행과 열의 값을 더한다)
+		}
+	}
+
 	printf("\n");
 	avg = total / 4.0;					
 	// avg변수를 사용한다. total / 4.0 << avg는 double로 출력되므로 소수점까지 입력해줌
