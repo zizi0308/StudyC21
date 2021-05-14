@@ -25,7 +25,7 @@ void preInsertNode(HeadNode* h, int data)
 		 h->head = newNode;			// head가 newNode를 가리켜야 전위삽입이 됨 
 	 }
 }
-/* 후위 삽입 함수*/
+/* 후위에 삽입하는 노드함수*/
 void rearInsertNode(HeadNode* h, int data)
 {
 	Node* newNode = (Node*)malloc(sizeof(Node));
