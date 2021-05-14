@@ -29,7 +29,7 @@ int main()
 	node5->data = 18;
 	node5->link = NULL;
 
-	Node* curr = head->link;
+	Node* curr = head->link;	// 원하는 노드를 찾기위해 임시의 포인터를 줌(정보를 담고 있는 헤드노드는 첫번째 값만 가리키고 있기때문)
 	int i = 1;
 
 	while (curr != NULL)	// 마지막노드까지 왔다가 빠져나감
