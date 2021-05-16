@@ -2,7 +2,7 @@
 #include <stdlib.h>
 typedef struct node {
 	int data;
-	struct node* next;		// 자기참조 구조체의 포인터 선언(노드를 연결하는 포인터)
+	struct node* next;		// 자기참조 구조체의 포인터 선언(노드를 연결하기 위해)
 } Node;
 typedef struct {
 	Node* head;				// 노드타입의 구조체 변수
@@ -11,7 +11,7 @@ typedef struct {
 /* 헤더를 생성하는 함수 */
 HeadNode* createHead()
 {	// 함수동작의 정의(일단 만들고 입,출력을 하나씩 주면 됨)
-	 HeadNode* h = (HeadNode*)malloc(sizeof(HeadNode));  // malloc(sizeof(HeadNode)) -> (HeadNode*) -> HeadNode* h 순으로 만들어짐
+	 HeadNode* h = (HeadNode*)malloc(sizeof(HeadNode));  // malloc(sizeof(HeadNode)) 메모리할당 -> (HeadNode*) 형변환 -> HeadNode* h 반환형 순으로 만들어짐
 	 if (h != NULL) h->head = NULL; // 일반적인 변수면 h->NULL; 가능 but, 구조체변수같은 경우 구조체 변수가 가리키는 필드에 데이터 넣기(역참조 방지를 위한 if문 + 역참조 예 : NULL이 h를 가리킬때)
 	 return h;			// 연결리스트는 헤드를 기준으로 돌아감 출력이 있는 형태가 좋음(왜? 다른 노드들이 헤드노드를 거쳐가기 때문), 동적할당 받은 메모리를 리턴시켜줌
 }
@@ -46,7 +46,7 @@ void rearInsertNode(HeadNode* h, int data)
 			curr->next = newNode;
 		}
 	}
-	// return newNode;
+	// return newNode; // void타입이기 때문에 return값 필요없음
 }
 /* 노드 출력 함수*/
 void printNode(HeadNode* h)
@@ -63,12 +63,19 @@ void printNode(HeadNode* h)
 void RemoveAll(HeadNode* h)
 {
 	Node* curr;
+	curr = h->head;
 	while (h->head != NULL)
 	{
-		curr = h->head;				// 첫번째 노드를 curr에 저장
-		h->head = h->head->next;	// 저장된 첫번째 노드를 두번째 노드로 옮김(curr = h->head 이므로 앞이 첫번째 노드임)
-		free(curr);					// 첫번째 노드 없어짐(얘가 사라지기 전에 주소 값을 이전해 줘야함)
+		int* tmp;
+		tmp = curr->next;				// 변수에 주소저장
+		free(curr);						// 노드삭제
+		curr = tmp;
+		//curr = h->head;				// 첫번째 노드를 curr에 저장(head가 가리키는 주소를 저장한다)
+		//h->head = h->head->next;	// 저장된 첫번째 노드를 두번째 노드로 옮김(curr = h->head 이므로 앞이 첫번째 노드임)
+		//free(curr);					// 첫번째 노드 없어짐(얘가 사라지기 전에 주소 값을 이전해 줘야함)
 	}
+	free(h);							// 헤드삭제
+	h->head = NULL;
 }
 /* 노드 검색함수 */
 Node* searchNode(HeadNode* h, int data)
@@ -77,7 +84,7 @@ Node* searchNode(HeadNode* h, int data)
 	while (s != NULL) // 얘를 h->head로 하면 반복될 수 있는 증감식이 없으므로 반복X 그래서 s로 해야함
 	{
 		if (s->data == data) {
-			printf("노드를 찾았습니다");
+			printf("노드를 찾았습니다\t");
 			return s;
 		}
 		else
@@ -96,18 +103,18 @@ void removeNode(HeadNode* h, Node * d)
 		printf("삭제하려는 값이 없습니다.");
 		return 0;
 	}
-	Node* curr = h->head;	// 헤드부터 출발
 	if (h->head == NULL){	// 헤드 값이 없을 때
 		printf("삭제할 노드가 없습니다.");
 		return 0;
 	}
 	else 
 	{ 
+		Node* curr = h->head;	// 헤드부터 출발
 		while (curr != NULL)	
 		{
-			if (curr->next == d) {
-				curr->next = d->next;
-				free(d); // curr->next가 삭제하려는 노드
+			if (curr->next == d) {		// curr의 다음노드가 삭제하려는 노드일 때, (next값 200 일때)
+				curr->next = d->next;	// curr->next의 주소값을 d->next로 옮긴다. (next값 200-> 300으로 옮김 결국 이전노드인 curr->next가 300번지의 주소로 옮겨짐)
+				free(d);				// 이후 연결이 끊어진 d를 삭제함
 			}
 			else {
 				curr = curr->next;
