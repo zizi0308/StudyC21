@@ -54,7 +54,7 @@ void printNode(HeadNode* phead)
 {
 	/*DlistNode* curr = NULL;
 	if (phead == NULL) return;
-	curr = phead->head; << 앞쪽에 이렇게 해도 실행가능*/
+	curr = phead->head;  << 앞쪽에 이렇게 해도 실행가능*/
 	DlistNode* curr = phead->head;
 	if (phead->head == NULL) printf("노드가 없습니다.\n");
 	while (curr != NULL)

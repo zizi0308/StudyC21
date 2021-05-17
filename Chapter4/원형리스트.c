@@ -1,5 +1,5 @@
 #include <stdio.h>
-// 원형노드 만들기 (원형노드는 마지막 노드를 헤더가 가리키게 함)
+// 원형노드 만들기 (원형노드는 마지막 노드와 첫번째 노드가 연결되있다.)
 typedef struct listnode {
 	int data;
 	struct listnode* link;
@@ -16,14 +16,14 @@ HeadNode* createHead()
 Listnode* createNode(HeadNode* phead, int data)
 {
 	Listnode* newNode = (Listnode*)malloc(sizeof(Listnode));	// 메모리 공간을 할당받고 시작주소를 리턴
-	if (newNode == NULL) {
+	if (newNode == NULL) {		// newNode가 없을 때
 		printf("메모리 할당 실패!");
 		return;
 	}
 	else {
 		newNode->data = data;
 		newNode->link = NULL;
-		return newNode;			// newNode의 시작주소를 리턴해라
+		return newNode;			// newNode의 시작주소를 가져와라
 	}
 }
 /* 전위 삽입 함수 */

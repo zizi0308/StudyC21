@@ -21,8 +21,8 @@ void preInsertNode(HeadNode* h, int data)
 	Node* newNode = (Node*)malloc(sizeof(Node));
 	if (newNode != NULL) {
 		newNode->data = data;
-		newNode->next = h->head;	// head가 newNode의 주소값을 가리켜야 첫번째로 위치하는 노드가 됨
-		h->head = newNode;			// head가 newNode를 가리켜야 전위삽입이 됨 
+		newNode->next = h->head;	// head가 newNode의 주소값을 가리켜야 첫번째로 위치하는 노드가 됨 h의 head에 newNode의 포인터 값을 넣는다.
+		h->head = newNode;			// head가 newNode를 가리켜야 전위삽입이 됨 (새로운 노드가 전체 리스트의 첫노드가 됨)
 	}
 }
 /* 후위에 삽입하는 노드함수 */
@@ -43,7 +43,7 @@ void rearInsertNode(HeadNode* h, int data)
 			{
 				curr = curr->next;		// 현재의 curr은 다음 노드(curr->next)로 이동(값만 떠나니기 때문에 대입값 필요) 
 			}
-			curr->next = newNode;
+			curr->next = newNode;		// curr->next = NULL대신 새노드의 주소값을 넣어줌
 		}
 	}
 	// return newNode; // void타입이기 때문에 return값 필요없음
@@ -60,8 +60,7 @@ void middleInsertNode(HeadNode* h, Node* pn, int data)
 		}
 		newNode->data = data;
 		newNode->next = NULL;
-		if (h->head == NULL) h->head = newNode;
-
+		if (h->head == NULL) h->head = newNode;		// head값이 NULL이면, 새로운 노드에 head의 주소값을 넣어 연결
 		else {
 			newNode->next = pn->next;	// (앞노드에 있는 next의 값을 먼저 가리켜야 함)다음 노드의 주소값을 먼저 집어넣어야 함
 			pn->next = newNode;			// 그래야 자기자신을 가리키지 않음
