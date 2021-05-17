@@ -11,25 +11,25 @@ typedef struct {
 /* 헤더를 생성하는 함수 */
 HeadNode* createHead()
 {	// 함수동작의 정의(일단 만들고 입,출력을 하나씩 주면 됨)
-	 HeadNode* h = (HeadNode*)malloc(sizeof(HeadNode));  // malloc(sizeof(HeadNode)) 메모리할당 -> (HeadNode*) 형변환 -> HeadNode* h 반환형 순으로 만들어짐
-	 if (h != NULL) h->head = NULL; // 일반적인 변수면 h->NULL; 가능 but, 구조체변수같은 경우 구조체 변수가 가리키는 필드에 데이터 넣기(역참조 방지를 위한 if문 + 역참조 예 : NULL이 h를 가리킬때)
-	 return h;			// 연결리스트는 헤드를 기준으로 돌아감 출력이 있는 형태가 좋음(왜? 다른 노드들이 헤드노드를 거쳐가기 때문), 동적할당 받은 메모리를 리턴시켜줌
+	HeadNode* h = (HeadNode*)malloc(sizeof(HeadNode));  // malloc(sizeof(HeadNode)) 메모리할당 -> (HeadNode*) 형변환 -> HeadNode* h 반환형 순으로 만들어짐
+	if (h != NULL) h->head = NULL; // 일반적인 변수면 h->NULL; 가능 but, 구조체변수같은 경우 구조체 변수가 가리키는 필드에 데이터 넣기(역참조 방지를 위한 if문 + 역참조 예 : NULL이 h를 가리킬때)
+	return h;			// 연결리스트는 헤드를 기준으로 돌아감 출력이 있는 형태가 좋음(왜? 다른 노드들이 헤드노드를 거쳐가기 때문), 동적할당 받은 메모리를 리턴시켜줌
 }
 /* 전위에 삽입하는 노드함수 */
 void preInsertNode(HeadNode* h, int data)
 {
-	 Node* newNode = (Node*)malloc(sizeof(Node));
-	 if (newNode != NULL) {
-		 newNode->data = data;		
-		 newNode->next = h->head;	// head가 newNode의 주소값을 가리켜야 첫번째로 위치하는 노드가 됨
-		 h->head = newNode;			// head가 newNode를 가리켜야 전위삽입이 됨 
-	 }
+	Node* newNode = (Node*)malloc(sizeof(Node));
+	if (newNode != NULL) {
+		newNode->data = data;
+		newNode->next = h->head;	// head가 newNode의 주소값을 가리켜야 첫번째로 위치하는 노드가 됨
+		h->head = newNode;			// head가 newNode를 가리켜야 전위삽입이 됨 
+	}
 }
-/* 후위에 삽입하는 노드함수*/
+/* 후위에 삽입하는 노드함수 */
 void rearInsertNode(HeadNode* h, int data)
 {
 	Node* newNode = (Node*)malloc(sizeof(Node));
-	
+
 	if (newNode != NULL) { // newNode가 생성되있음
 		newNode->data = data;			// return받았으면 그냥 data넣어도 됨
 		newNode->next = NULL;			// 뒤에 노드 없음을 나타냄(마지막 노드를 가리킴)
@@ -47,6 +47,26 @@ void rearInsertNode(HeadNode* h, int data)
 		}
 	}
 	// return newNode; // void타입이기 때문에 return값 필요없음
+}
+/* 중간노드 삽입 // 앞노드의 정보, 헤드, 데이터를 가지고 생성*/
+void middleInsertNode(HeadNode* h, Node* pn, int data)
+{
+	Node* newNode = (Node*)malloc(sizeof(Node));
+
+	if (newNode != NULL)
+	{
+		if (pn == NULL) {
+			printf("노드를 중간에 넣을 수 없습니다.\n");
+		}
+		newNode->data = data;
+		newNode->next = NULL;
+		if (h->head == NULL) h->head = newNode;
+
+		else {
+			newNode->next = pn->next;	// (앞노드에 있는 next의 값을 먼저 가리켜야 함)다음 노드의 주소값을 먼저 집어넣어야 함
+			pn->next = newNode;			// 그래야 자기자신을 가리키지 않음
+		}
+	}
 }
 /* 노드 출력 함수*/
 void printNode(HeadNode* h)
@@ -66,16 +86,12 @@ void RemoveAll(HeadNode* h)
 	curr = h->head;
 	while (h->head != NULL)
 	{
-		int* tmp;
-		tmp = curr->next;				// 변수에 주소저장
-		free(curr);						// 노드삭제
-		curr = tmp;
-		//curr = h->head;				// 첫번째 노드를 curr에 저장(head가 가리키는 주소를 저장한다)
-		//h->head = h->head->next;	// 저장된 첫번째 노드를 두번째 노드로 옮김(curr = h->head 이므로 앞이 첫번째 노드임)
-		//free(curr);					// 첫번째 노드 없어짐(얘가 사라지기 전에 주소 값을 이전해 줘야함)
+		curr = h->head;				// 첫번째 노드를 curr에 저장(head가 가리키는 주소를 저장한다)
+		h->head = h->head->next;	// 저장된 첫번째 노드를 두번째 노드로 옮김(curr = h->head 이므로 앞이 첫번째 노드임)
+		free(curr);					// 첫번째 노드 없어짐(얘가 사라지기 전에 주소 값을 이전해 줘야함)
+		curr = NULL;
 	}
 	free(h);							// 헤드삭제
-	h->head = NULL;
 }
 /* 노드 검색함수 */
 Node* searchNode(HeadNode* h, int data)
@@ -95,22 +111,22 @@ Node* searchNode(HeadNode* h, int data)
 	printf("노드에 데이터가 없습니다.");
 	return s;
 }
-/* 삭제 함수 */
-void removeNode(HeadNode* h, Node * d)
+/* 노드삭제 함수 */
+void removeNode(HeadNode* h, Node* d)
 {
 	if (d == NULL)			// d의 값이 없을 때
 	{
 		printf("삭제하려는 값이 없습니다.");
 		return 0;
 	}
-	if (h->head == NULL){	// 헤드 값이 없을 때
+	if (h->head == NULL) {	// 헤드 값이 없을 때
 		printf("삭제할 노드가 없습니다.");
 		return 0;
 	}
-	else 
-	{ 
+	else
+	{
 		Node* curr = h->head;	// 헤드부터 출발
-		while (curr != NULL)	
+		while (curr != NULL)
 		{
 			if (curr->next == d) {		// curr의 다음노드가 삭제하려는 노드일 때, (next값 200 일때)
 				curr->next = d->next;	// curr->next의 주소값을 d->next로 옮긴다. (next값 200-> 300으로 옮김 결국 이전노드인 curr->next가 300번지의 주소로 옮겨짐)
@@ -121,17 +137,20 @@ void removeNode(HeadNode* h, Node * d)
 			}
 		}
 	}
+
 }
 int main()
 {
-	HeadNode* h = createHead();		
-	rearInsertNode(h, 10);			// 출력이 없는 함수
+	HeadNode* h = createHead();
+	preInsertNode(h, 40);
+	preInsertNode(h, 10);
 	rearInsertNode(h, 20);
-	printNode(h);
+	//middleInsertNode(h, 10, 50);
+	//printNode(h);
 	//RemoveAll(h);
 	//printNode(h);
 	searchNode(h, 10);
-	removeNode(h, 10);
+	//removeNode(h, 10);
 	printNode(h);
 	return 0;
 }
