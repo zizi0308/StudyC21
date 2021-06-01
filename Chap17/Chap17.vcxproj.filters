@@ -18,5 +18,8 @@
     <ClCompile Include="화살표연산자.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="exercise.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

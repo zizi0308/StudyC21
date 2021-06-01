@@ -16,12 +16,22 @@ void free_ary(Fitness** pary, int count);
 
 int main()
 {
-	Fitness member;
-
-	while (member.num > 0)
+	Fitness member[100];
+	int i;
+	i = 1;
+	int temp;
+	while (member[i].num > 0)
 	{
 		printf("회원번호, 이름, 체중을 입력하세요: ");
-		scanf("%d %s %.1f", &member.num, &member.name, &member.weight);
+		scanf("%d", temp);
+		if (temp < 0) {
+			break;
+		}
+		else {
+			member[i].num = temp;
+			scanf("%s %.1f", member[i].name, &member[i].weight);
+		}
+		
 	}
 
 	return 0;
@@ -37,7 +47,13 @@ void total_number(int count)
 
 double average_weight(Fitness** pary, int count)
 {
-
+	int i;
+	int sum;
+	sum = 0;
+	for ( i = 0; i <= count; i++)
+	{
+		sum += member[i].;
+	}
 }
 
 int max_weight(Fitness** pary, int count)
