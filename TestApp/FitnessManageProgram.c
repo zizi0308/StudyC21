@@ -71,20 +71,15 @@ double average_weight(Fitness** pary, int count)
 
 int max_weight(Fitness** pary, int count)
 {
-	double max_weight;											// 최고 몸무게를 저장하기 위한 변수
 	int i;														// for문 실행을 위한 변수
 	int max_index;												// 최고 몸무게의 인덱스 값을 저장하기 위한 변수
-
-	max_index = 0;												// max_index 초기화
-	max_weight = pary[max_index]->weight;						// 첫번째 값을 최대몸무게로 설정
-	
-	for (i = 0; i < count; i++) {								// count - 1까지 for문 실행
-		if (pary[i]->weight > max_weight) {						// 해당 배열의 몸무게 데이터가 max_weight보다 크면
-			max_weight = pary[i]->weight;						// 해당 배열을 최대몸무게로 재설정하고
-			max_index = i;										// 그 최대 몸무게의 인덱스 값을 max_index에 저장
+	max_index = pary[0]->num;									// max_index 초기화
+	for (i = 1; i < count; i++) {								// i는 1부터 count - 1까지 for문 실행
+		if (pary[i]->weight > pary[i - 1]->weight) {			// pary[i]->weight가 이전 값보다 크면
+			max_index = pary[i]->num;							// 그 최대 몸무게의 인덱스 값을 max_index에 저장
 		}
 	}
-	return max_index;											// for문 실행이후 저장된 최대몸무게의 인덱스 반환
+	return max_index -1;										// for문 실행이후 저장된 최대 몸무게의 인덱스 반환
 }
 
 void print_info(Fitness** pary, int index)
