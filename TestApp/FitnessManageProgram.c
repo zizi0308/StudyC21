@@ -38,7 +38,7 @@ int main()
 				scanf("%s", ary[i]->name);						// 이름 입력
 				printf("체중을 입력하세요: ");					// 입력 메세지(체중)
 				scanf("%lf", &ary[i]->weight);					// 몸무게 입력
-				printf("\n");
+				printf("\n");									// 개행
 				getchar();										// 버퍼를 비우기 위한 getchar()
 				i++;											// 증감연산자 i(무한반복으로 break되기 전까지 순차적으로 배열을 증가시킴)
 				count++;										// 증감연산자 count(무한반복으로 break되기 전까지 순차적으로 회원수를 증가시킴)
@@ -85,7 +85,7 @@ int max_weight(Fitness** pary, int count)
 void print_info(Fitness** pary, int index)
 {
 	printf("\n");
-	printf("<회원정보>\n");
+	printf("<최고 몸무게 회원정보>\n");
 	printf("회원번호 : %d\t  회원이름 : %s\t  몸무게 : %f kg\n", pary[index]->num, pary[index]->name, pary[index]->weight);
 }
 

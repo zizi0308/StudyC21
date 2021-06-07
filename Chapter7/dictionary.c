@@ -31,12 +31,14 @@ int main()
 	printf("<대문자 사전순 정렬>\n");
 	insertion_sort(upper_ary);
 	printf("\n");
+	printf("\n");
 	printf("<소문자 사전순 정렬>\n");
 	insertion_sort(lower_ary);
 	printf("\n");
+	printf("\n");
 	printf("<전체 사전순 정렬>\n");
 	insertion_sort(input_ary);
-
+	printf("\n");
 	return 0;													// 메인함수 종료
 }
 void insertion_sort(char *pinput_ary)
