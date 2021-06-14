@@ -45,7 +45,7 @@ int main()
 			}
 		}
 	}
-	printf("\n");
+	printf("====================================\n");
 	total_number(count);											// 회원수를 반환하기위해 입력값에 count를 넣어줌
 	printf("평균몸무게 : %lf kg\t", average_weight(ary, count));	// 평균몸무게 출력(average_weight의 출력형이 double이므로 %lf)
 	printf("최고몸무게 회원번호 : %d\n", max_weight(ary, count));	// 최고 몸무게 회원번호 출력
@@ -79,7 +79,7 @@ int max_weight(Fitness** pary, int count)
 			max_index = pary[i]->num;							// 그 최대 몸무게의 인덱스 값을 max_index에 저장
 		}
 	}
-	return max_index -1;										// for문 실행이후 저장된 최대 몸무게의 인덱스 반환
+	return max_index-1;										// for문 실행이후 저장된 최대 몸무게의 인덱스 반환
 }
 
 void print_info(Fitness** pary, int index)
