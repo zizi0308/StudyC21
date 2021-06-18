@@ -98,6 +98,8 @@ C언어와 C 자료구조 학습 리포지토리
 
 -----------------------------------------------
 
+#### 1. 프로그램 시작화면
+
 
 ![삽입정렬_Images1](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_200628_001.png)
 
@@ -105,7 +107,14 @@ C언어와 C 자료구조 학습 리포지토리
 
 
 
+#### 2. 프로그램 출력화면
+
 
 ![삽입정렬_Images2](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_200642_001.png)
 
-입력받은 알파벳을 사전 순으로 
+입력받은 알파벳을 사전 순으로 정렬
+
+
+
+
+[프로젝트소스 바로가기](https://github.com/zizi0308/StudyC21/blob/main/Chapter7/dictionary.c)
