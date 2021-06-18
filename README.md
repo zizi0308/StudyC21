@@ -59,6 +59,11 @@ C언어와 C 자료구조 학습 리포지토리
 ![회원정보입력_Images3](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120627_001.png)
 
 
+#### 3. 출력화면
+
+![회원정보출력_Images](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120614_001.png)
+
+
 
 
 
