@@ -55,14 +55,17 @@ C언어와 C 자료구조 학습 리포지토리
 
 #### 2. 회원정보 입력화면
 ![회원정보입력_Images1](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120648_001.png)
+
 회원번호를 입력받는 부분
 
 
 ![회원정보입력_Images2](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120600_001.png)
+
 회원이름을 입력받는 부분
 
 
 ![회원정보입력_Images3](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120627_001.png)
+
 회원 몸무게를 입력받는 부분
 
 
@@ -71,6 +74,7 @@ C언어와 C 자료구조 학습 리포지토리
 #### 3. 출력화면
 
 ![회원정보출력_Images](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120614_001.png)
+
 회원번호를 음수로 입력하면 프로그램이 종료됨 총 회원수, 평균체중, 최고최중을 갖는 회원의 정보 표시
 
 
