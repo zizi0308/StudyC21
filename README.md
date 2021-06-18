@@ -45,3 +45,23 @@ C언어와 C 자료구조 학습 리포지토리
 콘솔 앱을 기반으로 하여 피트니스 회원 관리 프로그램을 만들었습니다. 회원번호와 이름, 체중을 입력 받으면 동적할당을 통해 heap영역에 저장되게 했고, 
 회원번호를 음수로 입력하면 프로그램이 종료되도록 만들었습니다. 출력값은 총 회원 수, 평균체중, 최고체중을 갖는 회원의 정보가 나오도록 구현했습니다.
 
+#### 1. 프로그램 시작화면
+![프로그램시작_Images](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120626_001.png)
+
+
+#### 2. 회원정보 입력화면
+![회원정보입력_Images1](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120648_001.png)
+
+
+![회원정보입력_Images2](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120600_001.png)
+
+
+![회원정보입력_Images3](https://github.com/zizi0308/StudyC21/blob/main/Images/img_20210618_120627_001.png)
+
+
+
+
+
+
+
+
